@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://bn6fs6pc67a80"]
+
+[ext_resource type="Script" uid="uid://dykmuullls881" path="res://Scripts/main.gd" id="1_u2kau"]
+[ext_resource type="Script" uid="uid://dobr1yowknnef" path="res://Scripts/camera_controller.gd" id="2_er8j5"]
+[ext_resource type="PackedScene" uid="uid://c0mjxx6m05f78" path="res://Scenes/HUD.tscn" id="3_qdmtm"]
+[ext_resource type="Script" uid="uid://dcwmy1tq54rv0" path="res://Scripts/tile_manager.gd" id="4_wr2g0"]
+
+[node name="Main" type="Node2D" unique_id=863748712]
+script = ExtResource("1_u2kau")
+tilePlacements = "res://TilePlacements/tile_pose_generation_4.json"
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=302468803]
+position = Vector2(520, 488)
+zoom = Vector2(5, 5)
+script = ExtResource("2_er8j5")
+pan_speed = 200.0
+max_zoom_level = 8.0
+min_zoom_level = 1.0
+edge_scroll_enabled = false
+zoom_smoothness = 0.7
+
+[node name="Control" parent="." unique_id=1377827588 instance=ExtResource("3_qdmtm")]
+
+[node name="TileManager" type="Node2D" parent="." unique_id=1930371478]
+script = ExtResource("4_wr2g0")

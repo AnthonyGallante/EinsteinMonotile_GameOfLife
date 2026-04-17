@@ -1,0 +1,326 @@
+[gd_scene format=3 uid="uid://c0mjxx6m05f78"]
+
+[ext_resource type="FontFile" uid="uid://2vlmq5mudgxf" path="res://Assets/Fonts/SpaceMono-Regular.ttf" id="1_c3eba"]
+[ext_resource type="Script" uid="uid://kdlpaxm1im0r" path="res://Scripts/hud.gd" id="1_nfm57"]
+[ext_resource type="Texture2D" uid="uid://obltg050p4w4" path="res://Assets/Icons/right.png" id="1_s3jbq"]
+[ext_resource type="Texture2D" uid="uid://cwdvot118rc0h" path="res://Assets/Icons/next.png" id="2_c3eba"]
+[ext_resource type="Texture2D" uid="uid://biao2nbo1vhmy" path="res://Assets/Icons/return.png" id="3_g8s2e"]
+[ext_resource type="Texture2D" uid="uid://bdhmx2al7e60v" path="res://Assets/Icons/yellow_tick.png" id="4_g8s2e"]
+[ext_resource type="Texture2D" uid="uid://ciwm6xmlmpolp" path="res://Assets/Icons/information.png" id="4_t385i"]
+[ext_resource type="Texture2D" uid="uid://cjexnbija14hr" path="res://Assets/Icons/grey_tickGrey.png" id="5_t385i"]
+[ext_resource type="Texture2D" uid="uid://d0oryix0qbx3l" path="res://Assets/HD/hat-monotile.png" id="9_b5b84"]
+[ext_resource type="Script" uid="uid://bt6encdth2wdc" path="res://Scripts/info_screen.gd" id="10_fbb48"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s3jbq"]
+bg_color = Color(0.13333334, 0.13725491, 0.13725491, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.9411765, 0.9647059, 0.9411765, 1)
+border_blend = true
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_nfm57"]
+content_margin_left = 0.0
+content_margin_top = 4.0
+content_margin_right = 0.0
+content_margin_bottom = 4.0
+color = Color(0.78431374, 0.8, 0.78431374, 1)
+grow_begin = -5.0
+grow_end = -5.0
+vertical = true
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c3eba"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.9098039, 0.77254903, 0.2784314, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+corner_detail = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g8s2e"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.9098039, 0.77254903, 0.2784314, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+corner_detail = 6
+
+[node name="Control" type="Control" unique_id=1377827588]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_nfm57")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=134394409]
+
+[node name="Panel" type="Panel" parent="CanvasLayer" unique_id=1613802155]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -60.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_s3jbq")
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Panel" unique_id=2083363532]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -571.0
+offset_top = -25.0
+offset_right = 571.0
+offset_bottom = 25.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HSplitContainer" type="HSplitContainer" parent="CanvasLayer/Panel/MarginContainer" unique_id=1843092768]
+layout_mode = 2
+size_flags_vertical = 4
+split_offsets = PackedInt32Array(204, 220, 269, 481, 515, 531, 612)
+dragging_enabled = false
+split_offset = 204
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Panel/MarginContainer/HSplitContainer" unique_id=602277437]
+layout_mode = 2
+
+[node name="PlayButton" type="Button" parent="CanvasLayer/Panel/MarginContainer/HSplitContainer/HBoxContainer" unique_id=333426491]
+custom_minimum_size = Vector2(100, 40)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_fonts/font = ExtResource("1_c3eba")
+text = "Play"
+icon = ExtResource("1_s3jbq")
+expand_icon = true
+
+[node name="StepButton" type="Button" parent="CanvasLayer/Panel/MarginContainer/HSplitContainer/HBoxContainer" unique_id=1643589439]
+custom_minimum_size = Vector2(100, 40)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_fonts/font = ExtResource("1_c3eba")
+text = "Step"
+icon = ExtResource("2_c3eba")
+expand_icon = true
+
+[node name="VSeparator" type="VSeparator" parent="CanvasLayer/Panel/MarginContainer/HSplitContainer" unique_id=1146910560]
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_styles/separator = SubResource("StyleBoxLine_nfm57")
+
+[node name="SpeedLabel" type="Label" parent="CanvasLayer/Panel/MarginContainer/HSplitContainer" unique_id=1601064145]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_colors/font_color = Color(0.78400004, 0.8, 0.78400004, 1)
+theme_override_fonts/font = ExtResource("1_c3eba")
+theme_override_font_sizes/font_size = 12
+text = "SPEED"
+horizontal_alignment = 2
+uppercase = true
+
+[node name="HSlider" type="HSlider" parent="CanvasLayer/Panel/MarginContainer/HSplitContainer" unique_id=1695441958]
+custom_minimum_size = Vector2(200, 0)
+layout_direction = 2
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+theme_override_icons/grabber = ExtResource("4_g8s2e")
+theme_override_icons/grabber_highlight = ExtResource("4_g8s2e")
+theme_override_icons/grabber_disabled = ExtResource("5_t385i")
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_c3eba")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_g8s2e")
+min_value = 1.0
+max_value = 10.0
+value = 1.0
+tick_count = 10
+ticks_on_borders = true
+ticks_position = 3
+
+[node name="FreqLabel" type="Label" parent="CanvasLayer/Panel/MarginContainer/HSplitContainer" unique_id=1613708030]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.9098039, 0.77254903, 0.2784314, 1)
+theme_override_fonts/font = ExtResource("1_c3eba")
+text = "1"
+horizontal_alignment = 2
+
+[node name="HzLabel" type="Label" parent="CanvasLayer/Panel/MarginContainer/HSplitContainer" unique_id=72813667]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_colors/font_color = Color(0.9098039, 0.77254903, 0.2784314, 1)
+theme_override_fonts/font = ExtResource("1_c3eba")
+theme_override_font_sizes/font_size = 12
+text = "Hz"
+
+[node name="VSeparator2" type="VSeparator" parent="CanvasLayer/Panel/MarginContainer/HSplitContainer" unique_id=1088099738]
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_styles/separator = SubResource("StyleBoxLine_nfm57")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Panel/MarginContainer/HSplitContainer" unique_id=1542383763]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+
+[node name="GenLabel" type="Label" parent="CanvasLayer/Panel/MarginContainer/HSplitContainer/VBoxContainer" unique_id=670603787]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(0.78431374, 0.8, 0.78431374, 1)
+theme_override_fonts/font = ExtResource("1_c3eba")
+theme_override_font_sizes/font_size = 12
+text = "GEN"
+horizontal_alignment = 1
+uppercase = true
+
+[node name="GenCountLabel" type="Label" parent="CanvasLayer/Panel/MarginContainer/HSplitContainer/VBoxContainer" unique_id=2007061777]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(0.9098039, 0.77254903, 0.2784314, 1)
+theme_override_fonts/font = ExtResource("1_c3eba")
+theme_override_font_sizes/font_size = 16
+text = "0000080"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="CanvasLayer/Panel/MarginContainer/HSplitContainer" unique_id=280369189]
+layout_mode = 2
+size_flags_horizontal = 8
+
+[node name="ClearButton" type="Button" parent="CanvasLayer/Panel/MarginContainer/HSplitContainer/HBoxContainer2" unique_id=2016493683]
+custom_minimum_size = Vector2(100, 40)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_fonts/font = ExtResource("1_c3eba")
+text = "Clear"
+icon = ExtResource("3_g8s2e")
+expand_icon = true
+
+[node name="InfoButton" type="Button" parent="CanvasLayer/Panel/MarginContainer/HSplitContainer/HBoxContainer2" unique_id=1279470868]
+custom_minimum_size = Vector2(100, 40)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_fonts/font = ExtResource("1_c3eba")
+text = "Info"
+icon = ExtResource("4_t385i")
+expand_icon = true
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="." unique_id=1017071691]
+
+[node name="InfoPanel" type="Panel" parent="CanvasLayer2" unique_id=682708655]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -544.0
+offset_top = -296.0
+offset_right = 544.0
+offset_bottom = 248.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_s3jbq")
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer2/InfoPanel" unique_id=244753544]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -534.0
+offset_top = -262.0
+offset_right = 534.0
+offset_bottom = 262.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="CanvasLayer2/InfoPanel/MarginContainer" unique_id=1833515555]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer2/InfoPanel/MarginContainer/ScrollContainer" unique_id=921865958]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Panel" type="Panel" parent="CanvasLayer2/InfoPanel/MarginContainer/ScrollContainer/VBoxContainer" unique_id=159773804]
+custom_minimum_size = Vector2(0, 150)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer2/InfoPanel/MarginContainer/ScrollContainer/VBoxContainer/Panel" unique_id=1550440331]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("9_b5b84")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer2/InfoPanel/MarginContainer/ScrollContainer/VBoxContainer" unique_id=1821922676]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+focus_mode = 2
+theme_override_font_sizes/normal_font_size = 20
+bbcode_enabled = true
+text = "[font_size=28]The Game of Life[/font_size]
+
+The Game of Life is a cellular automaton devised by mathematician John Conway in 1970. Think of it as a living grid — every cell is either [b]alive[/b] or [b]dead[/b], and with each new generation, four simple rules are applied to every cell at the same time:
+
+	- A living cell with fewer than [b]2[/b] neighbors dies from isolation.
+	- A living cell with [b]2 or 3[/b] neighbors survives to the next generation.
+	- A living cell with more than [b]3[/b] neighbors dies from overcrowding.
+	- A dead cell with exactly [b]3[/b] neighbors becomes alive through reproduction.
+
+That's it. From just these four rules, surprisingly complex behavior can emerge: stable structures, repeating oscillators, and even patterns that travel across the grid indefinitely.
+
+[i][font_size=20]Why an aperiodic grid?[/font_size][/i]
+
+On a standard square grid, every cell has exactly 8 neighbors. This uniformity is what makes classic Game of Life patterns so predictable and portable — a glider behaves the same no matter where you place it.
+
+This grid is different. It is built from the [b]Einstein monotile[/b], nicknamed the \"hat,\" a 13-sided shape that tiles the plane without ever repeating. You can read about it in the 2023 paper by Smith et al. [url=https://arxiv.org/abs/2303.10798]here[/url].
+
+Because the tiling never repeats, no two tiles share exactly the same neighborhood geometry. Depending on where it sits in the tiling, a cell can have either [b]6 or 7 neighbors[/b]. This subtle difference that changes how the rules play out locally. A pattern that oscillates in one region may stabilize, mutate, or collapse entirely if placed just a few tiles over.
+
+This makes the aperiodic grid a genuinely different environment to explore. What survives here is largely an open question. I've already found several different structures that lead to periodic behavior. What can you find?
+
+[font_size=20]A note on the grid[/font_size]
+
+While the Einstein monotile can tile the plane infinitely in theory, this application uses a [b]finite grid[/b]. Cells near the boundary have fewer neighbors than they otherwise would, which may affect behavior near the edges.
+
+[font_size=28]Controls[/font_size]
+
+	- [b]Click[/b] — toggle a cell alive or dead
+	- [b]Click and drag[/b] — paint cells like a brush
+	- [b]Scroll wheel[/b] — zoom in and out
+	- [b]Middle click drag[/b] — pan across the grid"
+fit_content = true
+vertical_alignment = 3
+selection_enabled = true
+script = ExtResource("10_fbb48")
+
+[connection signal="pressed" from="CanvasLayer/Panel/MarginContainer/HSplitContainer/HBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/Panel/MarginContainer/HSplitContainer/HBoxContainer/StepButton" to="." method="_on_step_button_pressed"]
+[connection signal="changed" from="CanvasLayer/Panel/MarginContainer/HSplitContainer/HSlider" to="." method="_on_h_slider_changed"]
+[connection signal="pressed" from="CanvasLayer/Panel/MarginContainer/HSplitContainer/HBoxContainer2/ClearButton" to="." method="_on_clear_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/Panel/MarginContainer/HSplitContainer/HBoxContainer2/InfoButton" to="." method="_on_info_button_pressed"]
+[connection signal="meta_clicked" from="CanvasLayer2/InfoPanel/MarginContainer/ScrollContainer/VBoxContainer/RichTextLabel" to="CanvasLayer2/InfoPanel/MarginContainer/ScrollContainer/VBoxContainer/RichTextLabel" method="_on_meta_clicked"]

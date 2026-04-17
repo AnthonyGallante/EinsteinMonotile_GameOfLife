@@ -1,0 +1,15 @@
+tilePlacements.json
+-------------------
+Root object:
+  "tiles": array of tile objects.
+
+Each tile object:
+  "tile_index"      — int, unique id used by the simulation and streaming.
+  "vertices"        — polygon in logical/plane coordinates (optional for drawing).
+  "vertices_pixel"  — polygon in scene pixels; used for collision, drawing, adjacency fallback.
+  "center_pixel"    — { "x", "y" } anchor for the tile node position.
+  "neighbors"       — array of tile_index values sharing an edge with this tile (required for Life;
+					  if omitted, neighbors can be computed at load from edge geometry).
+  "rotation_degrees"
+
+Optional fields (ignored by runtime logic unless you use them): center, chirality, etc.
