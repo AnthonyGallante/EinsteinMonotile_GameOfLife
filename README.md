@@ -51,6 +51,10 @@ As we discover interesting patterns, share them below!
 
 ### Carabiner
 <img width="558" height="544" alt="carabiner" src="https://github.com/user-attachments/assets/1441fea2-254c-48a2-8dc7-69fe1e3e37f6" />
+
+### Rotator
+<img width="616" height="454" alt="Rotator" src="https://github.com/user-attachments/assets/3263ad7c-7087-4778-8a87-851030d3e016" />
+
  
 ## Further Reading
 - Smith et al. (2023) — [An aperiodic monotile](https://arxiv.org/abs/2303.10798)
