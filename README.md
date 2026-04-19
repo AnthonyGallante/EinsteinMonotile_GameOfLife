@@ -20,8 +20,12 @@ On a standard square grid, every cell has the same number of neighbors. The unif
 This makes the aperiodic grid a genuinely different computational substrate — and what survives here is largely an open question.
 
 Because of my implementation of the tiling procedure, the game is actually too big to host on GitHub Pages, so you will have to clone the repository and play it yourself in Godot. This is because it's nontrivially difficult to infinitely tile the plane with this shape. I used a bottom-up approach, with an algorithm that builds progressively larger structures given a handful of starting structures. The grid in this game is not infinite, unfortunately! It can only be used to investigate local Game of Life patterns.
-I hope to make this game smaller and browser friendly in the future! 
 
+### Example of Metatile Building from Smith et al.
+<img width="763" height="527" alt="building metatiles" src="https://github.com/user-attachments/assets/55479a0a-8372-4641-aeb5-28c9a326992d" />
+
+
+I hope to make this game smaller and browser friendly in the future! 
 
 ## Controls
  
